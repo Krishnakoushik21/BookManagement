@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+    <style>
+        /* Styling the form */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Reduce gap between form fields */
+    max-width: 400px; /* Set a smaller max width */
+    font-size: 14px; /* Decrease font size */
+}
+
+label {
+    font-weight: bold;
+    font-size: 12px; /* Decrease font size for labels */
+}
+
+input[type="text"], input[type="date"], select {
+    padding: 4px; /* Decrease padding */
+    font-size: 12px; /* Decrease font size */
+    width: 100%; /* Make inputs take full width of the container */
+    box-sizing: border-box;
+}
+
+/* Add Employee button */
+.btn-add {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 6px 12px; /* Reduce padding */
+    font-size: 12px; /* Decrease font size */
+    cursor: pointer;
+    margin-top: 8px;
+    width: fit-content;
+}
+
+.btn-add:hover {
+    background-color: #218838;
+}
+
+/* Styling the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px; /* Decrease font size */
+    margin-top: 10px;
+}
+
+th, td {
+    padding: 6px 8px; /* Reduce cell padding */
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Action buttons */
+.btn-edit, .btn-delete {
+    color: white;
+    border: none;
+    padding: 4px 8px; /* Reduce button padding */
+    font-size: 10px; /* Decrease font size */
+    cursor: pointer;
+    margin-right: 4px;
+}
+
+.btn-edit {
+    background-color: #007bff;
+}
+
+.btn-edit:hover {
+    background-color: #0056b3;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+    </style>
+</head>
+<body>
+
+    <h2>Book Management</h2>
+
+    <div class="form-container">
+        <label for="bookId">Book ID:</label><br>
+        <input type="number" id="bookId" placeholder="Book ID"><br>
+
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" placeholder="Title"><br>
+
+        <label for="author">Author:</label><br>
+        <input type="text" id="author" placeholder="Author"><br>
+
+        <label for="type">Type:</label><br>
+        <input type="text" id="type"><br>
+
+        <button class="btn-add" onclick="addBook()">Add Book</button>
+    </div>
+
+    <h2>Book List</h2>
+
+    <div class="table-container">
+        <table class="book-table" id="bookTable">
+            <thead>
+                <tr>
+                    <th>Book ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Type</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Book rows will appear here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
